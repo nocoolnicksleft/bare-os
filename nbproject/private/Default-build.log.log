@@ -1,0 +1,21 @@
+mkdir build
+arm-none-eabi-gcc -Wall -O2 -nostdlib -nostartfiles -fno-exceptions -ffreestanding -mcpu=arm1176jzf-s -I source/ -c source/syscalls.c -o build/syscalls.o
+arm-none-eabi-gcc -Wall -O2 -nostdlib -nostartfiles -fno-exceptions -ffreestanding -mcpu=arm1176jzf-s -I source/ -c source/basic.cpp -o build/basic.o
+source/basic.cpp: In function 'int main()':
+source/basic.cpp:27:7: warning: unused variable 'f' [-Wunused-variable]
+ FILE *f;
+       ^
+arm-none-eabi-gcc -Wall -O2 -nostdlib -nostartfiles -fno-exceptions -ffreestanding -mcpu=arm1176jzf-s -I source/ -c source/other.cpp -o build/other.o
+arm-none-eabi-gcc -Wall -O2 -nostdlib -nostartfiles -fno-exceptions -ffreestanding -mcpu=arm1176jzf-s -I source/ -c source/uart.cpp -o build/uart.o
+arm-none-eabi-as -I source/ source/draw.s -o build/draw.o
+arm-none-eabi-as -I source/ source/gpio.s -o build/gpio.o
+arm-none-eabi-as -I source/ source/interrupt.s -o build/interrupt.o
+arm-none-eabi-as -I source/ source/mailbox.s -o build/mailbox.o
+arm-none-eabi-as -I source/ source/main.s -o build/main.o
+arm-none-eabi-as -I source/ source/random.s -o build/random.o
+arm-none-eabi-as -I source/ source/screen.s -o build/screen.o
+arm-none-eabi-as -I source/ source/timer.s -o build/timer.o
+arm-none-eabi-ld -v  --no-undefined build/syscalls.o build/basic.o build/other.o build/uart.o build/draw.o build/gpio.o build/interrupt.o build/mailbox.o build/main.o build/random.o build/screen.o build/timer.o /home/bseip/arm-2008q3/arm-none-eabi/lib/libc.a /home/bseip/gcc-arm-none-eabi-4_8-2013q4/lib/gcc/arm-none-eabi/4.8.3/libgcc.a -Map kernel.map -o build/output.elf -T kernel.ld
+GNU ld (GNU Tools for ARM Embedded Processors) 2.23.2.20131129
+arm-none-eabi-objcopy build/output.elf -O binary kernel.img 
+arm-none-eabi-objdump -d build/output.elf > kernel.list

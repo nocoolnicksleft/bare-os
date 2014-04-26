@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="90">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="build">
+        <df name="fatfs">
+        </df>
+        <df name="fonts">
+        </df>
+        <df name="gapi">
+        </df>
+        <df name="mmc">
+        </df>
+      </df>
+      <df name="source">
+        <df name="archive">
+          <in>draw.s</in>
+          <in>interrupt.s</in>
+          <in>main.cpp</in>
+          <in>random.s</in>
+          <in>timer.s</in>
+        </df>
+        <df name="fatfs">
+          <df name="option">
+            <in>cc932.c</in>
+            <in>cc936.c</in>
+            <in>cc949.c</in>
+            <in>cc950.c</in>
+            <in>ccsbcs.c</in>
+            <in>syscall.c</in>
+            <in>unicode.c</in>
+          </df>
+          <in>diskio.c</in>
+          <in>diskio.h</in>
+          <in>ff.c</in>
+          <in>ff.h</in>
+          <in>ffconf.h</in>
+          <in>integer.h</in>
+        </df>
+        <df name="fonts">
+          <in>6x8.c</in>
+          <in>6x8.h</in>
+          <in>ComicSansMS10.c</in>
+          <in>ComicSansMS10.h</in>
+          <in>ComicSansMS10.height.c</in>
+          <in>ComicSansMS10.height.h</in>
+          <in>ComicSansMS10.width.c</in>
+          <in>ComicSansMS10.width.h</in>
+          <in>ComicSansMS12.c</in>
+          <in>ComicSansMS12.h</in>
+          <in>ComicSansMS12.height.c</in>
+          <in>ComicSansMS12.height.h</in>
+          <in>ComicSansMS12.width.c</in>
+          <in>ComicSansMS12.width.h</in>
+          <in>EGA_8x8.c</in>
+          <in>EGA_8x8.h</in>
+          <in>LucidaConsole10.c</in>
+          <in>LucidaConsole10.h</in>
+          <in>LucidaConsole10.width.c</in>
+          <in>LucidaConsole10.width.h</in>
+          <in>Noritake5x5.c</in>
+          <in>Noritake5x5.h</in>
+          <in>Noritake5x5.width.c</in>
+          <in>Noritake5x5.width.h</in>
+          <in>VGA_16x16.c</in>
+          <in>VGA_16x16.h</in>
+          <in>_VGA_16x16.h</in>
+          <in>font6x8.c</in>
+          <in>font6x8.h</in>
+          <in>font6x8_width.c</in>
+          <in>font6x8_width.h</in>
+        </df>
+        <df name="gapi">
+          <in>FreePtr.h</in>
+          <in>binaries.cpp</in>
+          <in>binaries.h</in>
+          <in>bitmap.cpp</in>
+          <in>bitmap.h</in>
+          <in>callback.h</in>
+          <in>common.cpp</in>
+          <in>common.h</in>
+          <in>controlbutton.cpp</in>
+          <in>controlbutton.h</in>
+          <in>flipbook.cpp</in>
+          <in>flipbook.h</in>
+          <in>font.cpp</in>
+          <in>font.h</in>
+          <in>memory_tracking.cpp</in>
+          <in>memory_tracking.h</in>
+          <in>rectangle.cpp</in>
+          <in>rectangle.h</in>
+          <in>screen.cpp</in>
+          <in>screen.h</in>
+          <in>screenraspi.cpp</in>
+          <in>screenraspi.h</in>
+          <in>wconsole.cpp</in>
+          <in>wconsole.h</in>
+          <in>window.cpp</in>
+          <in>window.h</in>
+        </df>
+        <df name="mmc">
+          <in>block.c</in>
+          <in>block.h</in>
+          <in>emmc.c</in>
+          <in>fs.h</in>
+          <in>mbox.c</in>
+          <in>mbox.h</in>
+          <in>mmio.c</in>
+          <in>mmio.h</in>
+          <in>multiboot.h</in>
+          <in>output.h</in>
+          <in>timer.c</in>
+          <in>timer.h</in>
+          <in>util.h</in>
+        </df>
+        <in>bcm2835.h</in>
+        <in>gpio.s</in>
+        <in>mailbox.s</in>
+        <in>main.cpp</in>
+        <in>main.h</in>
+        <in>other.cpp</in>
+        <in>screens.s</in>
+        <in>startup.s</in>
+        <in>syscalls.c</in>
+        <in>uart.cpp</in>
+        <in>uart.h</in>
+      </df>
+    </df>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>2</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>.</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>
