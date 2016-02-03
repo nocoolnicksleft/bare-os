@@ -16,6 +16,8 @@
         <df name="archive">
           <in>draw.s</in>
           <in>interrupt.s</in>
+          <in>lodepng.cpp</in>
+          <in>lodepng.h</in>
           <in>main.cpp</in>
           <in>random.s</in>
           <in>timer.s</in>
@@ -113,6 +115,7 @@
           <in>timer.h</in>
           <in>util.h</in>
         </df>
+        <in>bcm2835.cpp</in>
         <in>bcm2835.h</in>
         <in>gpio.s</in>
         <in>mailbox.s</in>
@@ -120,6 +123,7 @@
         <in>main.h</in>
         <in>other.cpp</in>
         <in>screens.s</in>
+        <in>startup.h</in>
         <in>startup.s</in>
         <in>syscalls.c</in>
         <in>uart.cpp</in>

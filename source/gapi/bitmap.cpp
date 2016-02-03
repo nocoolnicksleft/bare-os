@@ -455,7 +455,7 @@ void Bitmap::DrawBitmapAlpha(Bitmap * source, int px, int py)
 
 	if (target_x < 0) 
 	{
-		if (target_x < (-source_img_width)) return;
+		if (target_x < (-(int)source_img_width)) return;
 		sourceoffset = -target_x;
 		source_img_width += target_x;
 		source_img -= target_x;

@@ -17,17 +17,12 @@ typedef volatile unsigned int vuint32;
 
 
 
-//#include <nds.h>
-//#include <nds/arm9/image.h>
 #include <stdio.h>
 #include <string.h>
 
 #include "binaries.h"
 
 #include "memory_tracking.h"
-
-// #include <gbfs.h>
-// extern const GBFS_FILE  data_gbfs;
 
 #include <vector>
 #include <map>

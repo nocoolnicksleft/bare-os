@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "startup.h"
 #include "bcm2835.h"
 
 #include "uart.h"

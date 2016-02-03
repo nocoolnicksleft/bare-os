@@ -22,7 +22,7 @@
 #ifndef FS_H
 #define FS_H
 
-#include <dirent.h>
+// #include <dirent.h>
 #include <stdio.h>
 #include <stdint.h>
 #include "block.h"

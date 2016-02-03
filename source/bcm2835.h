@@ -26,28 +26,19 @@ struct fbInfo {
 extern "C" {
 #endif
 
-uint32_t GET32(uint32_t address);
-void PUT32(uint32_t address, uint32_t value);
-void dummy(int a);
-void delay(int a);
+
 
 void SetGpio(uint32_t pin, uint32_t value);
 void SetGpioFunction(uint32_t, uint32_t value);
 
 extern fbInfo * InitialiseFrameBuffer(uint32 width, uint32 height, uint32 colordepth);
 
-uint32_t Random(uint32_t seed);
-void SetGraphicsAddress(fbInfo * address);
-void SetForeColour(uint32_t address);
-void DrawLine(uint32_t x1, uint32_t y1, uint32_t x2, uint32_t y2);
-void DrawRect(uint32_t x1, uint32_t y1, uint32_t x2, uint32_t y2);
-
-void enable_irq(void);
-void enable_fiq(void);
 
 #ifdef __cplusplus
 }
 #endif
+
+#define LAST_GPIO_PIN 53
 
 #define GPFSEL0 (*(vuint32*) 0x20200000)
 #define GPFSEL0_PIN9_OUTPUT (0b001 << 27)

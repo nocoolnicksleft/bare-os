@@ -9,18 +9,6 @@
     </data>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/home/bseip/os/source/gapi/bitmap.cpp</file>
-            <file>file:/home/bseip/os/source/gapi/window.h</file>
-            <file>file:/home/bseip/os/source/mmc/mbox.c</file>
-            <file>file:/home/bseip/os/source/fatfs/diskio.c</file>
-            <file>file:/home/bseip/os/source/gapi/window.cpp</file>
-            <file>file:/home/bseip/os/source/mmc/block.h</file>
-            <file>file:/home/bseip/os/source/fatfs/diskio.h</file>
-            <file>file:/home/bseip/os/source/main.cpp</file>
-            <file>file:/home/bseip/os/source/fatfs/ff.c</file>
-            <file>file:/home/bseip/os/source/mmc/mbox.h</file>
-            <file>file:/home/bseip/os/source/mmc/emmc.c</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

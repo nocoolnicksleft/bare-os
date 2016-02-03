@@ -254,14 +254,14 @@ caddr_t _sbrk(int incr) {
  extern char _HEAP_END_; /* Defined by the linker */
  
  static char *prev_heap_end;
- _uart_writes("_sbrk incr ");
+ _uart_writes("_sbrk alloc ");
  hexstrings(incr);
  _uart_writes(" heap ");
  hexstrings((int)&_HEAP_START_);
  _uart_writes(" - ");
  hexstrings((int)&_HEAP_END_);
- _uart_writes(" prev heap end ");
- hexstring((int)prev_heap_end);
+ //_uart_writes(" prev heap end ");
+ //hexstring((int)prev_heap_end);
  
  if (heap_end == 0) {
   heap_end = &_HEAP_START_;
@@ -270,16 +270,16 @@ caddr_t _sbrk(int incr) {
  
  if (heap_end + incr > &_HEAP_END_) {
   /* Heap and stack collision */
-     _uart_writes(" Failed: Heap and stack collision\r\n");
+     _uart_writes("Failed: Heap and stack collision\n");
      
   return (caddr_t)0;
   
  }
  
  heap_end += incr;
- _uart_writes(" success, new heap end ");
+ _uart_writes("Success, new heap end ");
  hexstring((int)heap_end);
- _uart_writes("\r\n");
+ _uart_writes("\r");
  return (caddr_t) prev_heap_end;
  }
 

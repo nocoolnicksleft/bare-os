@@ -44,7 +44,7 @@
 #define EMMC_DEBUG
 #endif
 
-#define EMMC_DEBUG
+// #define EMMC_DEBUG
 
 // Configuration options
 
@@ -1852,7 +1852,7 @@ int sd_card_init(struct block_device **dev)
 #ifdef EMMC_DEBUG
     printf("SD: &scr: %08lx\n", ret->scr->scr[0]);
     printf("SD: SCR[0]: %08lx, SCR[1]: %08lx\n", ret->scr->scr[0], ret->scr->scr[1]);;
-    printf("SD: SCR: %08x%08lx\n", byte_swap(ret->scr->scr[0]), byte_swap(ret->scr->scr[1]));
+    printf("SD: SCR: %08d%08d\n", byte_swap(ret->scr->scr[0]), byte_swap(ret->scr->scr[1]));
     printf("SD: SCR: version %s, bus_widths %01lx\n", sd_versions[ret->scr->sd_version],
            ret->scr->sd_bus_widths);
 #endif
@@ -1894,7 +1894,7 @@ int sd_card_init(struct block_device **dev)
 
 	printf("SD: found a valid version %s SD card\n", sd_versions[ret->scr->sd_version]);
 #ifdef EMMC_DEBUG
-	printf("SD: setup successful (status %i)\n", status);
+	printf("SD: setup successful (status %ld)\n", status);
 #endif
 
 	// Reset interrupt register
@@ -1916,7 +1916,7 @@ static int sd_ensure_data_mode(struct emmc_block_dev *edev)
 	}
 
 #ifdef EMMC_DEBUG
-	printf("SD: ensure_data_mode() obtaining status register for card_rca %08x: ",
+	printf("SD: ensure_data_mode() obtaining status register for card_rca %08lx: ",
 		edev->card_rca);
 #endif
 
@@ -1931,7 +1931,7 @@ static int sd_ensure_data_mode(struct emmc_block_dev *edev)
 	uint32_t status = edev->last_r0;
 	uint32_t cur_state = (status >> 9) & 0xf;
 #ifdef EMMC_DEBUG
-	printf("status %i\n", cur_state);
+	printf("status %ld\n", cur_state);
 #endif
 	if(cur_state == 3)
 	{
@@ -1983,7 +1983,7 @@ static int sd_ensure_data_mode(struct emmc_block_dev *edev)
 		cur_state = (status >> 9) & 0xf;
 
 #ifdef EMMC_DEBUG
-		printf("%i\n", cur_state);
+		printf("%ld\n", cur_state);
 #endif
 
 		if(cur_state != 4)
@@ -2100,7 +2100,7 @@ int sd_read(struct block_device *dev, uint8_t *buf, size_t buf_size, uint32_t bl
         return -1;
 
 #ifdef EMMC_DEBUG
-	printf("SD: read() card ready, reading from block %u\n", block_no);
+	printf("SD: read() card ready, reading from block %lu\n", block_no);
 #endif
 
     if(sd_do_data_command(edev, 0, buf, buf_size, block_no) < 0)
@@ -2122,7 +2122,7 @@ int sd_write(struct block_device *dev, uint8_t *buf, size_t buf_size, uint32_t b
         return -1;
 
 #ifdef EMMC_DEBUG
-	printf("SD: write() card ready, reading from block %u\n", block_no);
+	printf("SD: write() card ready, reading from block %lu\n", block_no);
 #endif
 
     if(sd_do_data_command(edev, 1, buf, buf_size, block_no) < 0)

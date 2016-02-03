@@ -44,11 +44,11 @@ reset:
 /*************************/
 /* Set stack pointers    */
 /*************************/
-.equ UND_Stack_Size, 0x2000  /*  8 kByte */
-.equ ABT_Stack_Size, 0x2000  /*  8 kByte */
-.equ FIQ_Stack_Size, 0x10000 /* 64 kByte */
-.equ IRQ_Stack_Size, 0x10000 /* 64 kByte */
-.equ SVC_Stack_Size, 0x10000 /* 64 kByte */
+.equ UND_Stack_Size, 0x4000  /*  16 kByte */
+.equ ABT_Stack_Size, 0x4000  /*  16 kByte */
+.equ FIQ_Stack_Size, 0x20000 /* 128 kByte */
+.equ IRQ_Stack_Size, 0x20000 /* 128 kByte */
+.equ SVC_Stack_Size, 0x20000 /* 128 kByte */
 .equ F_Bit, 0x20
 .equ I_Bit, 0x40
 .equ Mode_UND, 0b11011
@@ -81,7 +81,7 @@ reset:
     mov     sp, r0
     sub     r0, r0, #IRQ_Stack_Size
 
-    /* Supervisor Mode */
+    /* Supervisor Mode (SWI) */
     msr     cpsr_c, #Mode_SVC|I_Bit|F_Bit
     mov     sp, r0
     sub     r0, r0, #SVC_Stack_Size
@@ -136,6 +136,7 @@ _ctor_end:
 /******************************************************************************
  * Stop doing anything                                                        *
  ******************************************************************************/
+.globl stop
 stop:
     cpsid i 
     cpsid f

@@ -10,7 +10,7 @@ GetGpioAddress:
 	
 .globl SetGpioFunction
 
-SetGpioFunction:
+SetGpioFunctionX:
 	cmp r0,#53
 	cmpls r1,#7
 	movhi pc,lr
